@@ -113,12 +113,22 @@ small{
 
     .cm-user-name, .cm-box-title{
           font-size: 17px;
-          /*font-weight: 500;*/
           padding: 5px 0 5px 15px;
-          /*margin: 25px 10px 0 0;*/
           display: inline;
-          /*color: #777777;*/
       }
+
+    .cm-inside-box-title{
+        font-size: 17px;
+        font-style: italic;
+        padding: 5px 0 5px 15px;
+        display: inline;
+        color: #777777;
+    }
+
+        .cm-inside-box-title span{
+            font-weight: 700 !important;
+            font-style: italic;
+        }
 
     .cm-box-title{
         font-weight: normal !important;
@@ -127,15 +137,6 @@ small{
         .cm-box-title span{
             font-weight: 500 !important;
         }
-
-    .cm-inside-box-title{
-       /* padding: 0 0 5px 20px;*/
-        margin: 10px 0 0 15px;
-        font-weight: 500 !important;
-        font-size: 20px;
-        color: #777777;
-    }
-
 
     .cm-results-subtitle{
         padding: 0 0 5px 0!important;
@@ -193,7 +194,6 @@ small{
 .box-vote-singleresults{
     height: 100%;
     min-height: 100%;
-    /*padding-top: 20px !important;*/
     padding-top: 15px;
 }
 
@@ -225,13 +225,6 @@ small{
     font-weight: 500;
     color: #2FA4E7 !important;
 }
-
-    .vote-update{
-        /*text-align: right;*/
-        /*position: absolute;*/
-        /*top: 22px;*/
-        /*right: 40px;*/
-    }
 
     .vote-ultimate-update{
         text-align: center;
@@ -306,16 +299,10 @@ small{
     }
     .vote-reminder{
         background: #00609f !important;
-       /* position: absolute;
-        right: 40px;
-        top: 22px;*/
         height: 28px;
         line-height: 13px;
         margin-bottom: 4px;
-        /*padding-left: 20px;*/
-        /*padding-right: 20px;*/
         color: #ffffff;
-        /*margin: 2px 0 2px 0;*/
     }
         .vote-button:hover, .vote-reminder:hover{
             background: #2FA4E7 !important;

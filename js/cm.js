@@ -44,6 +44,7 @@ $(function sendAReminder() {
     });
 });
 
+
 //COLLECTING VOTE RESULTS CHART
 
 google.load("visualization", "1", {packages:["corechart"]});
