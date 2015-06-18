@@ -20,22 +20,21 @@
 <body>
 <nav class="navbar top-navigator-bar">
     <div class="row top-navigator">
-        <div class="navbar navbar-left col-lg-7 col-md-7 col-sm-9 col-xs-12 no-padding no-margin">
+        <div class="navbar navbar-left col-lg-6 col-md-6 col-sm-9 col-xs-12 no-padding no-margin">
             <ul class="navbar-left no-margin">
                 <li class="brand"><img src="images/broad_logo_allwhite.png" alt="Broad Institute Logo"></li>
-                <li><a href="#">Data set</a></li>
-                <li><a href="#">New set</a></li>
+                <li><a href="my_console.html">My Console</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </div>
-        <div class="navbar navbar-right col-lg-2 col-md-2 col-sm-3 col-xs-6 no-margin">
+        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-3 col-xs-6 no-margin">
             <li class="dropdown navbar-right user-li">
                 <a id="dacUser" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                    DAC User <span class="caret"></span>
+                    DAC User <span class="caret"></span></br><small>dacuser@broadinstitute.org</small>
                 </a>
                 <ul class="dropdown-menu user-dropdown" role="menu">
-                    <li>Something</li><hr>
-                    <li>Some other thing</li>
+                    <a href="#"><li>Something</li></a>
+                    <a href="#"><li>Something else</li></a>
                 </ul>
             </li>
         </div>
@@ -52,7 +51,10 @@
     </div>
 </nav>
 <div class="container">
-    <h2 class="cm-title">Data Use Letter Congruence Review</br><small>Were the consent limitations accurately converted into a machine-readable format?</small></h2>
+    <h2 class="cm-title">
+        <img src="images/ico_translate.png" alt="Translation icon" class="cm-icons">Data Use Letter Congruence Review</br>
+        <div class="cm-title-description">Were the consent limitations accurately converted into a machine-readable format?</div>
+    </h2>
     <hr class="section-separator">
     <h3 id="datasetName" class="cm-subtitle">Name of the Dataset</h3>
     <div class="row">
