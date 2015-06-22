@@ -28,6 +28,33 @@ small{
     font-weight: bold !important;
 }
 
+.center-text{
+    text-align: center;
+}
+
+.dul-color{
+     color: #C16B0C !important;
+ }
+
+.dul-background{
+    background: #C16B0C !important;
+}
+
+.dul-background-light{
+    background: rgba(193, 107, 12, 0.8) !important;
+}
+
+.access-color{
+    color: #603B9B !important;
+}
+
+.access-background{
+    background: #603B9B !important;
+}
+
+.access-background-light{
+    background: rgba(96, 59, 155, 0.8) !important;
+}
 /*********************************************NAV*/
 
 .top-navigator-bar{
@@ -103,7 +130,8 @@ small{
 /*********************************TITLES & SUBTITLES*/
 
 .cm-title, .cm-subtitle, .cm-subtitle-ultimate, .cm-user-name, .cm-results-subtitle, .cm-box-title{
-    color: #00609f;
+    /*color: #00609f;*/
+    color: #777777;
 }
     .cm-title-description{
         color: #777777;
@@ -164,18 +192,15 @@ small{
     padding: 0;
     box-shadow: 2px 2px 0 #cccccc;
 }
-.cm-boxhead-dul{
-    background: #00609f !important;
+
+.cm-boxhead{
     border: 0!important;
 }
-.cm-boxhead-ssdur{
-    background: #2FA4E7 !important;
-    border: 0!important;
- }
-    .cm-boxhead-dul h4, .cm-boxhead-ssdur h4{
+    .cm-boxhead h4{
         font-size: 16px !important;
         margin: 5px 5px 3px 5px !important;
     }
+
 .cm-boxbody{
    font-weight: 500;
 }
@@ -234,7 +259,7 @@ small{
 }
 
 .vote-label, .vote-update, .control-label{
-    color: #777777 !important;
+    color: #777777;
     padding: 10px 0 0 0;
 }
 
@@ -258,7 +283,6 @@ small{
         text-align: right;
         font-weight: 500;
         margin-bottom: 0;
-        color: #00609f !important;
     }
 
 .form-group-bottom{
@@ -293,12 +317,12 @@ small{
         background: #ffffff !important;
     }
         .regular-radio:checked + label {
-            background-color: #e9ecee;
-            box-shadow: 0 0 8px #00609f;
-            border: 1px solid #00609f;
+            background-color: #2FA4E7;
+            box-shadow: 0 0 8px #2FA4E7;
+            border: 1px solid #2FA4E7;
         }
             .regular-radio:checked + label:before, .regular-radio:checked + label:after {
-                background: none repeat scroll 0 0 #00609f;
+                background: none repeat scroll 0 0 #2FA4E7;
                 content: " ";
                 position: absolute;
                 border-radius: 50%;
@@ -318,11 +342,11 @@ small{
     font-weight: 500;
 }
     .vote-button{
-        background: #00609f !important;
+        background: #00609f;
         float: right !important;
     }
     .vote-reminder{
-        background: #00609f !important;
+        background: #00609f;
         height: 28px;
         line-height: 13px;
         margin-bottom: 4px;
@@ -366,6 +390,7 @@ small{
 .pvotes-icons{
     height: 40px;
     padding-right: 10px;
+    display: inline-block !important;
 }
 
 .cm-icons{
@@ -383,36 +408,34 @@ small{
 }
     .pvotes-box-body{
         max-height: 190px;
-        overflow-y: auto;
+        overflow-y: hidden;
         overflow-x: hidden;
         color: #777777;
     }
 
-.pvotes-box-title, .pvotes-box-subtitle{
-    color: #00609f;
-    display: inline;
+.pvotes-box-title{
+    font-size: 22px;
+    padding: 10px 10px 0 10px;
+    font-weight: 500;
+    display: inline-block;
 }
-    .pvotes-box-title{
-        font-size: 22px;
-        padding: 10px 10px 0 10px;
-        font-weight: 500;
-        display: block;
-    }
     .pvotes-box-title span{
         font-style: italic;
         padding: 0 0 0 40px;
         font-size: 16px;
         color: #777777;
+        display: inline-block;
     }
-    .pvotes-box-subtitle{
-        font-weight: 500 !important;
-        font-size: 16px;
-        padding: 5px 10px 10px 10px;
-    }
+
+.pvotes-box-subtitle{
+    font-style: italic;
+    font-size: 16px;
+    padding: 5px 10px 10px 10px;
+}
 
 .pvotes-link{
     width: auto;
-    padding-left: 5px;
+    padding: 0 10px 0 10px;
     display: block;
     cursor: pointer !important;
     transition: background 0.3s ease;
@@ -427,22 +450,33 @@ small{
     width: 100%;
 }
 
-.pvotes-list, .pvotes-list-status, .pvotes-list-status-editable{
-    padding: 10px 5px 7px 20px;
+.pvotes-list, .pvotes-list-status, .pvotes-list-status-editable, .pvotes-list-center{
+    padding: 10px 15px 7px 15px;
  }
-    .pvotes-list{
-        color: #777777;
-    }
-    .pvotes-list-status{
+    .pvotes-list-status, .pvotes-list-status-editable, .pvotes-list-center{
         margin-left: -5px;
         font-weight: 500;
-        color: #2FA4E7;
     }
-        .pvotes-list-status-editable{
-            margin-left: -5px;
-            font-weight: 500;
+        .pvotes-list{
             color: #777777;
         }
+
+.status-urgent, .status-pending, .status-editable{
+    font-weight: 500;
+    text-align: center;
+    margin-left: -5px;
+}
+    .status-urgent{
+        color: #D13B07;
+    }
+    .status-pending{
+        color: #D13B07;
+        /*color: #00609f !important;*/
+        /*color: #2FA4E7 !important;*/
+    }
+    .status-editable{
+        color: #777777 !important;
+    }
 
 .pvotes-link:hover .pvotes-list, .pvotes-link:hover .pvotes-list-status, .pvotes-link:hover .pvotes-list-status-editable{
     color: #ffffff !important;
@@ -452,5 +486,43 @@ small{
       color: #777777;
       font-style: italic;
       font-size: 15px;
-      margin: 0 0 20px 40px;
+      margin: 0 0 0 45px;
   }
+
+.pvotes-pagination{
+    text-align: center;
+}
+
+.pvotes-pagination ul{
+    margin: 10px 0 -10px 0;
+}
+
+.pvotes-pagination li a{
+    background: #eeeeee;
+    border: 0;
+    color: #777777;
+    transition: background 0.3s ease;
+}
+    .pvotes-pagination li a:hover{
+        background: #2FA4E7 !important;
+        color: #ffffff;
+        font-weight: 500;
+    }
+    .pvotes-pagination li a .pag-active{
+        background: #00609f !important;
+    }
+
+.pcases-tag{
+    background: #D13B07;
+    height: auto;
+    width: auto;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 4px 4px 2px 3px;
+    margin-left: 10px;
+    vertical-align: top;
+    display: inline-block !important;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+}
