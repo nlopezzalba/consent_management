@@ -62,12 +62,12 @@ var PAGINATOR_MAX_ITEMS = 9;
 var LIST_ITEMS_MAX_ITEMS = 5;
 
 var listItemsTemplate = '<% _.forEach(elections, function(election) { %>';
-listItemsTemplate += '<hr class="pvotes-main-separator">';
+listItemsTemplate += '<hr class="pvotes-separator">';
 listItemsTemplate += '<a href="<%= election.link %>" class="pvotes-link">';
 listItemsTemplate += '<div class="row">';
-listItemsTemplate += '<div class="idSample col-lg-8 col-md-8 col-sm-6 col-xs-6 pvotes-list"><%= election.sampleId %></div>';
-listItemsTemplate += '<div class="percentageCompleted col-lg-2 col-md-2 col-sm-3 col-xs-3 pvotes-list center-text"><%= election.percentage %>%</div>';
-listItemsTemplate += '<div class="voteStatus col-lg-2 col-md-2 col-sm-3 col-xs-3 pvotes-list center-text status-<%= election.status %>">';
+listItemsTemplate += '<div class="idSample col-lg-8 col-md-8 col-sm-8 col-xs-6 pvotes-list"><%= election.sampleId %></div>';
+listItemsTemplate += '<div class="percentageCompleted col-lg-2 col-md-2 col-sm-2 col-xs-3 pvotes-list center-text"><%= election.percentage %>%</div>';
+listItemsTemplate += '<div class="voteStatus col-lg-2 col-md-2 col-sm-2 col-xs-3 pvotes-list center-text status-<%= election.status %>">';
 listItemsTemplate += '<% if(election.status == "urgent"){ %>URGENT!<% } %>';
 listItemsTemplate += '<% if(election.status == "pending"){ %>Pending<% } %>';
 listItemsTemplate += '<% if(election.status == "editable"){ %>Editable<% } %>';
@@ -79,7 +79,7 @@ listItemsTemplate += '<% }); %>';
 
 var paginatorTemplate = '<li><a href="#" onclick="generateWhatever(\'<%= id %>\', <%= currentPage - 1 %>)">&laquo;</a></li>';
 paginatorTemplate += '<% _.forEach(pages, function(page) { %>';
-paginatorTemplate += '<li><a href="#" <% if(currentPage == page){ %> class="pag-active" <% } %> onclick="generateWhatever(\'<%= id %>\', <%= page %>)"><%= page + 1 %></a></li>';
+paginatorTemplate += '<li><a href="#" <% if(currentPage == page){ %> class="active-case" <% } %> onclick="generateWhatever(\'<%= id %>\', <%= page %>)"><%= page + 1 %></a></li>';
 paginatorTemplate += '<% }); %>';
 paginatorTemplate += '<li><a href="#" onclick="generateWhatever(\'<%= id %>\', <%= currentPage + 1 %>)">&raquo;</a></li>';
 
@@ -140,62 +140,3 @@ function generateListItemsHtml(data, page){
 	
 	return compiled({"elections": reducedJsonData});
 }
-
-
-//COLLECTING VOTE RESULTS CHART - LOAD DYNAMIC DATA
-//
-//google.load("visualization", "1", {packages:["corechart"]});
-//google.setOnLoadCallback(drawChart);
-//function drawChart() {
-//
-//    var data = google.visualization.arrayToDataTable([
-//        ['Results', 'Votes'],
-//        ['Positive', 3],
-//        ['Negative', 2],
-//        ['Missing', 1]
-//    ]);
-//
-//    var options = {
-//        pieHole: 0.4,
-//        pieSliceTextStyle: {
-//            color: 'white',
-//            fontSize: 16
-//        },
-//        pieSliceText: 'none',
-//        pieSliceBorderColor: 'transparent',
-//        backgroundColor: 'transparent',
-//        chartArea: {
-//            left: 0,
-//            top: 10,
-//            right: 0,
-//            bottom: 10,
-//            width:'100%',
-//            height:'85%'
-//        },
-//        height: 138,
-//        slices: {
-//            0: { color: '#C16B0C' },
-//            1: { color: '#777777' },
-//            2: { color: '#c9c9c9' }
-//        },
-//        legend: {
-//            position: 'right',
-//            textStyle: {
-//                color: '#777777',
-//                bold: true,
-//                fontName: 'Roboto',
-//                fontSize: 14
-//            },
-//            alignment: 'start'
-//        },
-//        tooltip: {
-//            textStyle: {
-//                color: 'black',
-//                fontSize: 14
-//            }
-//        }
-//    };
-//
-//    var chart = new google.visualization.PieChart(document.getElementById('dulResultsChart'));
-//    chart.draw(data, options);
-//}

@@ -11,7 +11,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/cm_styles.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,14 +22,24 @@
 <body>
 <nav class="navbar top-navigator-bar">
     <div class="row top-navigator">
-        <div class="navbar navbar-left col-lg-6 col-md-6 col-sm-9 col-xs-12 no-padding no-margin">
+        <div class="navbar col-lg-6 col-md-6 col-sm-8 col-xs-12 no-padding no-margin">
             <ul class="navbar-left no-margin">
                 <li class="brand"><img src="images/broad_logo_allwhite.png" alt="Broad Institute Logo"></li>
                 <li><a href="my_console.html">My Console</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </div>
-        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-3 col-xs-6 no-margin">
+        <div class="navbar col-lg-3 col-md-3 col-sm-4 col-xs-6 no-margin">
+            <form class="input-group box-search" id="adv-search" role="search">
+                <input type="text" class="form-control" placeholder="Enter search term..." />
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary btn-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-4 col-sm-offset-8 col-xs-6 no-margin">
             <li class="dropdown navbar-right user-li">
                 <a id="dacUser" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
                     DAC User <span class="caret"></span></br><small>dacuser@broadinstitute.org</small>
@@ -41,24 +50,14 @@
                 </ul>
             </li>
         </div>
-        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-4 col-offset-8 col-xs-6 no-margin">
-            <form class="input-group box-search" id="adv-search" role="search">
-                <input type="text" class="form-control" placeholder="Enter search term..." />
-                <div class="input-group-btn">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-primary btn-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                    </div>
-                </div>
-            </form>
-        </div>
     </div>
 </nav>
 <div class="container">
-    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
         <h2 class="cm-title">Welcome DAC User!</br><small>These are your pending cases for review</small></h2>
         <hr class="section-separator">
     </div>
-    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
         <h2 class="pvotes-box-title dul-color">
             <img src="images/icon_dul.png" alt="Translation icon" class="pvotes-icons">Data Use Letter Congruence Review<div  id="dulPendingCases" class="pcases-tag">18</div></br><!--change to dynamic content-->
             <div class="pvotes-box-title-description">Were the consent limitations accurately converted into a machine-readable format?</div>
@@ -66,13 +65,13 @@
         <div class="jumbotron box-vote-singleresults">
             <div class="row">
                 <div class="pvotes-box-head">
-                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6 pvotes-box-subtitle dul-color">Sample Collection</div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 center-text pvotes-box-subtitle dul-color">% Logged</div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 center-text pvotes-box-subtitle dul-color">Status</div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 pvotes-box-subtitle dul-color">Consent id</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 center-text pvotes-box-subtitle dul-color">% Logged</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 center-text pvotes-box-subtitle dul-color">Status</div>
+                    <hr class="pvotes-main-separator">
                 </div>
                 <div class="pvotes-box-body" id="dul_review_list">
-                    <hr class="pvotes-main-separator">
-                    <a href="dul_review.html" class="pvotes-link">
+                    <a class="pvotes-link">
                         <div class="row">
                             <div class="idSample"></div>
                             <div class="percentageCompleted"></div>
@@ -87,7 +86,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
         <h2 class="pvotes-box-title access-color">
             <img src="images/icon_access.png" alt="Access icon" class="pvotes-icons">Data Access Request<div id="accessPendingCases" class="pcases-tag">4</div></br><!--change to dynamic content-->
             <div class="pvotes-box-title-description">Should the researcher be allowed to access this research studies?</div>
@@ -95,9 +94,9 @@
         <div class="jumbotron box-vote-singleresults">
             <div class="row">
                 <div class="pvotes-box-head">
-                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6 pvotes-box-subtitle access-color">Sample Collection</div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 center-text pvotes-box-subtitle access-color">% Logged</div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 center-text pvotes-box-subtitle access-color">Status</div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 pvotes-box-subtitle access-color">Sample Collection</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 center-text pvotes-box-subtitle access-color">% Logged</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 center-text pvotes-box-subtitle access-color">Status</div>
                 </div>
                 <div class="pvotes-box-body" id="access_review_list">
                     <hr class="pvotes-main-separator">

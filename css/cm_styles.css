@@ -87,6 +87,7 @@ small{
 .brand{
     margin: 0 30px 0 0;
     padding: 0!important;
+    vertical-align: middle;
 }
     .brand img{
         margin: 0 20px 4px 0;
@@ -130,7 +131,6 @@ small{
 /*********************************TITLES & SUBTITLES*/
 
 .cm-title, .cm-subtitle, .cm-subtitle-ultimate, .cm-user-name, .cm-results-subtitle, .cm-box-title{
-    /*color: #00609f;*/
     color: #777777;
 }
     .cm-title-description{
@@ -289,7 +289,7 @@ small{
     margin-bottom: 0 !important;
 }
 
-/****************************************BUTTONS*/
+/********************************BUTTONS AND RADIO BUTTONS*/
 
 .button-holder {
     float: left;
@@ -399,7 +399,6 @@ small{
     display: inline !important;
 }
 
-
 /***************************PENDING CASES*/
 
 .pvotes-box-head, .pvotes-box-body{
@@ -466,13 +465,8 @@ small{
     text-align: center;
     margin-left: -5px;
 }
-    .status-urgent{
+    .status-urgent, .status-pending{
         color: #D13B07;
-    }
-    .status-pending{
-        color: #D13B07;
-        /*color: #00609f !important;*/
-        /*color: #2FA4E7 !important;*/
     }
     .status-editable{
         color: #777777 !important;
@@ -516,13 +510,20 @@ small{
     background: #D13B07;
     height: auto;
     width: auto;
-    border-radius: 4px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
     color: #ffffff;
-    padding: 4px 4px 2px 3px;
+    box-shadow: 1px 1px #cccccc;
+    padding: 3px 4px 3px 3px;
     margin-left: 10px;
     vertical-align: top;
     display: inline-block !important;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
+}
+
+.active-case{
+    background: #cccccc !important;
+    font-weight: 700;
 }

@@ -6,8 +6,8 @@ function drawChart() {
 
     var data = google.visualization.arrayToDataTable([
         ['Results', 'Votes'],
-        ['Positive', 3],
-        ['Negative', 2],
+        ['Yes', 3],
+        ['No', 2],
         ['Missing', 1]
     ]);
 
