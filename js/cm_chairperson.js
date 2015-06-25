@@ -1,57 +1,10 @@
-//VOTE INPUTS
-
-$(function() {
-    $("#voteForm").submit(function(e) {
-        e.preventDefault();
-        if (validateInput()) {
-            $("#errorMsg").addClass("hidden");
-            $("#successMsg").removeClass("hidden");
-            //$("#voteBtn").html("Edit");
-            // TODO : submit vote using AJAX
-        } else {
-            $("#errorMsg").removeClass("hidden");
-            $("#successMsg").addClass("hidden");
-        }
-    });
-});
-
-function votePositiveFunction(){
-    $('#inputVoteNegative').removeAttr('checked');
-    $('#inputRationale').val('');
-    $('#inputRationale').prop("disabled", true);
-    clearMessages();
-}
-
-function voteNegativeFunction(){
-    $('#inputVotePositive').removeAttr('checked');
-    $('#inputRationale').removeAttr('disabled').focus();
-    clearMessages();
-}
-
-function validateInput() {
-    return $("#voteForm input:checked").length;
-}
-
-function clearMessages(){
-    $("#errorMsg").addClass("hidden");
-    $("#successMsg").addClass("hidden");
-}
-
-$(function sendAReminder() {
-    $('.sendReminder').click(function() {
-        this.value = 'Reminder sent';
-        $('.sendReminder').addClass("clickedBtn");
-    });
-});
-
-
-//DAC USER PENDING CASES
+//DAC CHAIRPERSON PENDING CASES
 
 var jsonData = {};
-$.get("json/cm_json.json", function(data){
+$.get("json/cm_chairperson_json.json", function(data){
 	jsonData = data;
-	generateWhatever("dul_review", 0);
-	generateWhatever("access_review", 0);
+	generatePagination("dul_review", 0);
+	generatePagination("access_review", 0);
 });
 
 var pages = {
@@ -60,38 +13,41 @@ var pages = {
 }
 var PAGINATOR_MAX_ITEMS = 9;
 var LIST_ITEMS_MAX_ITEMS = 5;
-
+//
 var listItemsTemplate = '<% _.forEach(elections, function(election) { %>';
 listItemsTemplate += '<hr class="pvotes-separator">';
 listItemsTemplate += '<div class="row pvotes-main-list">';
 listItemsTemplate += '<div class="idSample col-lg-6 col-md-6 col-sm-6 col-xs-4 pvotes-list-id"><%= election.sampleId %></div>';
 
-listItemsTemplate += '<div class="voteStatus col-lg-2 col-md-2 col-sm-2 col-xs-3 pvotes-list <%= election.status %>">';
-listItemsTemplate += '<% if(election.status == "urgent"){ %>URGENT!<% } %>';
-listItemsTemplate += '<% if(election.status == "pending"){ %>Pending<% } %>';
-listItemsTemplate += '<% if(election.status == "editable"){ %>Editable<% } %>';
-listItemsTemplate += '</div>';
-
-listItemsTemplate += '<div class="percentageCompleted col-lg-2 col-md-2 col-sm-2 col-xs-3 pvotes-list"><%= election.percentage %>%</div>';
-
 listItemsTemplate += '<a href="<%= election.link %>" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">';
 listItemsTemplate += '<div class="voteButton <%= election.status %>">';
-listItemsTemplate += '<% if(election.status == "urgent" || election.status == "pending"){ %>Vote<% } %>';
+listItemsTemplate += '<% if(election.status == "pending"){ %>Vote<% } %>';
 listItemsTemplate += '<% if(election.status == "editable"){ %>Edit<% } %>';
+listItemsTemplate += '<% if(election.status == "disabled"){ %>---<% } %>';
 listItemsTemplate += '</div>';
 listItemsTemplate += '</a>';
 
+listItemsTemplate += '<div class="percentageCompleted col-lg-2 col-md-2 col-sm-2 col-xs-3 pvotes-list"><%= election.percentage %>%</div>';
+
+listItemsTemplate += '<a href="<%= election.collectLink %>" class="col-lg-2 col-md-2 col-sm-2 col-xs-3 no-padding">';
+listItemsTemplate += '<div class="collectButton <%= election.collect %>">';
+listItemsTemplate += '<% if(election.status == "pending"){ %>---<% } %>';
+listItemsTemplate += '<% if(election.status == "editable"){ %>Collect Votes<% } %>';
+listItemsTemplate += '<% if(election.status == "disabled"){ %>FINAL VOTE<% } %>';
+listItemsTemplate += '</div>';
+listItemsTemplate += '</a>';
 
 listItemsTemplate += '</div>';
 listItemsTemplate += '<% }); %>';
 
-var paginatorTemplate = '<li><a href="#" onclick="generateWhatever(\'<%= id %>\', <%= currentPage - 1 %>)">&laquo;</a></li>';
-paginatorTemplate += '<% _.forEach(pages, function(page) { %>';
-paginatorTemplate += '<li><a href="#" <% if(currentPage == page){ %> class="active-case" <% } %> onclick="generateWhatever(\'<%= id %>\', <%= page %>)"><%= page + 1 %></a></li>';
-paginatorTemplate += '<% }); %>';
-paginatorTemplate += '<li><a href="#" onclick="generateWhatever(\'<%= id %>\', <%= currentPage + 1 %>)">&raquo;</a></li>';
 
-function generateWhatever(id, page){
+var paginatorTemplate = '<li><a href="#" onclick="generatePagination(\'<%= id %>\', <%= currentPage - 1 %>)">&laquo;</a></li>';
+paginatorTemplate += '<% _.forEach(pages, function(page) { %>';
+paginatorTemplate += '<li><a href="#" <% if(currentPage == page){ %> class="active-case" <% } %> onclick="generatePagination(\'<%= id %>\', <%= page %>)"><%= page + 1 %></a></li>';
+paginatorTemplate += '<% }); %>';
+paginatorTemplate += '<li><a href="#" onclick="generatePagination(\'<%= id %>\', <%= currentPage + 1 %>)">&raquo;</a></li>';
+
+function generatePagination(id, page){
 
 	var amountOfElements = jsonData[id].length;
 	var isValidPage = ((amountOfElements / LIST_ITEMS_MAX_ITEMS) > page) && (page >= 0);
@@ -109,11 +65,6 @@ function generateWhatever(id, page){
 	$("#" + paginatorId).html(paginatorHtml);
 	$("#" + listItemsId).html(listItemsHtml);
 }
-
-/**
-	Data structure for json
-	[{"sampleId": "val", "percentage": "", "status": "", "link": ""}]
-*/
 
 function generatePaginator(id, page){
 

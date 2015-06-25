@@ -8,7 +8,7 @@ function drawChart() {
         ['Results', 'Votes'],
         ['Yes', 4],
         ['No', 1],
-        ['Missing', 1]
+        ['Pending', 1]
     ]);
 
     var options = {
