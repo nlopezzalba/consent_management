@@ -69,14 +69,6 @@ $(function voteYesFunction() {
     });
 });
 
-function voteYesFunction(){
-    $('.inputNo').removeAttr("checked");
-}
-
-function voteNoFunction(){
-    $('.inputYes').removeAttr("checked");
-}
-
 //DAC USER PENDING CASES
 
 var jsonData = {};

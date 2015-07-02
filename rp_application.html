@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Access Request and Research Purpose Application</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cm_styles.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar top-navigator-bar">
+    <div class="row top-navigator">
+        <div class="navbar col-lg-6 col-md-6 col-sm-8 col-xs-12 no-padding no-margin">
+            <ul class="navbar-left no-margin">
+                <li class="brand"><img src="images/broad_logo_allwhite.png" alt="Broad Institute Logo"></li>
+                <li><a href="dacuser_console.html">My Console</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        <div class="navbar col-lg-3 col-md-3 col-sm-4 col-xs-6 no-margin">
+            <form class="input-group box-search" id="adv-search" role="search">
+                <input type="text" class="form-control" placeholder="Enter search term..." />
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary btn-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-4 col-sm-offset-8 col-xs-6 no-margin">
+            <li class="dropdown navbar-right user-li">
+                <a id="dacUser" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                    Researcher <span class="caret"></span></br><small>researcher@broadinstitute.org</small>
+                </a>
+                <ul class="dropdown-menu user-dropdown" role="menu">
+                    <a href="#"><li>Something</li></a>
+                    <a href="#"><li>Something else</li></a>
+                </ul>
+            </li>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row no-margin">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+            <h2 class="cm-title request-color">
+                <img src="images/icon_request.png" alt="access icon" class="cm-icons">Research Purpose Application</br>
+                <div class="cm-title-description-request">The section below includes a series of questions intended to allow our Data Access Committee to evaluate a newly developed semi-automated process of data access control.</div>
+            </h2>
+            <hr class="section-separator">
+            <section id="wizard">
+                <div id="rootwizard">
+                    <ul class="row multi-step-buttons">
+                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6 multi-step-title request-color">
+                            <a href="#tab1" data-toggle="tab" class="jumbotron box-vote">
+                                <small>Step 1</small>Reseacher Information
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6 multi-step-title request-color">
+                            <a href="#tab2" data-toggle="tab" class="jumbotron box-vote">
+                                <small>Step 2</small>Data Access Request
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6 multi-step-title request-color">
+                            <a href="#tab3" data-toggle="tab" class="jumbotron box-vote">
+                                <small>Step 3</small>Research Purpose Review
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6 multi-step-title request-color">
+                            <a href="#tab4" data-toggle="tab" class="jumbotron box-vote">
+                                <small>Step 4</small>Attestation Statement
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane" id="tab1">
+                            <form class="form-horizontal" id="rpApplicationForm01">
+                                <h3 class="cm-subtitle request-color">1. Researcher Information</h3>
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-title-question">1.1 Principal Investigator<span>By typing in the name of the principal investigator, I certify that he or she is aware of this research study.</span></label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <input type="text" name="inputInvestigator" id="inputInvestigator" class="form-control" required="required" placeholder="Principal Investigator">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-title-question">1.2 Applicant Organization</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label class="control-label">Institution Name</label>
+                                        <input type="text" name="inputInstitution" id="inputInstitution" class="form-control" required="required" placeholder="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label class="control-label">Department</label>
+                                        <input type="text" name="inputDepartment" id="inputDepartment" class="form-control" required="required" placeholder="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label class="control-label">Division</label>
+                                        <input type="text" name="inputDivision" id="inputDivision" class="form-control" required="required" placeholder="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label class="control-label">Street Address 1</label>
+                                        <input type="text" name="inputAddress1" id="inputAddress1" class="form-control" required="required" placeholder="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label class="control-label">Street Address 2</label>
+                                        <input type="text" name="inputAddress2" id="inputAddress2" class="form-control" required="required" placeholder="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label class="control-label">City</label>
+                                        <input type="text" name="inputCity" id="inputCity" class="form-control" required="required" placeholder="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label class="control-label">State</label>
+                                        <input type="text" name="inputState" id="inputState" class="form-control" required="required" placeholder="">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <label class="control-label">Zip/Postal Code</label>
+                                        <input type="text" name="inputZipCode" id="inputZipCode" class="form-control" required="required" placeholder="">
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                        <label class="control-label">Country</label>
+                                        <input type="text" name="inputCountry" id="inputCountry" class="form-control" required="required" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-title-question">1.3 Descriptive Title of Project<span>Please note that coordinated requests by collaborating institutions should each use the same title.</span></label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <input type="text" name="inputTitle" id="inputTitle" class="form-control" required="required" placeholder="Title of the project">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                            <form class="form-horizontal" id="rpApplicationForm02">
+                                <h3 class="cm-subtitle request-color">2. Data Access Request</h3>
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-title-question">2.1 Dataset ID<span>Please type the ID of the datasets you would like to request access to for this study. <a href="#">Link to the catalog?</a></span></label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <input type="text" name="inputDatasetID" id="inputDatasetID" class="form-control" required="required" placeholder="Dataset ID">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-title-question">2.2 Research use statement (RUS)<span>A RUS  is a brief description of the applicant’s proposed use of the dataset(s). The RUS will be reviewed by all parties responsible for data covered by this Data Access Request. Please note that if access is approved, you agree that the RUS, along with your name and institution, will be included on this website to describe your research project to the public.</br>Please enter your RUS in the area below. The RUS should be one or two paragraphs in length and include research objectives, the study design, and an analysis plan (including the phenotypic characteristics that will be tested for association with genetic variants). If you are requesting multiple datasets, please describe how you will use them. Examples of RUS can be found at <a href="#">GWAS website</a>.</span></label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <textarea name="inputRUS" id="inputRUS" class="form-control" maxlength="2200" rows="6" required="required" placeholder="Please limit your RUS to 2200 characters."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-title-question">2.3 Non-Technical summary<span>Please enter below a non-technical summary of your RUS suitable for understanding by the general public (written at a high school reading level or below).</span></label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <textarea name="inputNonTechRUS" id="inputNonTechRUS" class="form-control" maxlength="1100" rows="3" required="required" placeholder="Please limit your non-technical summary to 1100 characters."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-title-question">2.4 Type of Research <span>Select all applicable options.</span></label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="checkbox">
+                                            <input id="checkDiseases" type="checkbox" class="checkbox-inline rp-checkbox" name="checkDiseases">
+                                            <label class="regular-checkbox rp-choice-questions" for="checkDiseases"><span>2.4.1 Disease-related studies: </span>The primary purpose of the research is to learn more about a particular disease or disorder (e.g., type 2 diabetes), a trait (e.g., blood pressure), or a set of related conditions (e.g., autoimmune diseases, psychiatric disorders).</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="checkbox">
+                                            <input id="checkMethods" type="checkbox" class="checkbox-inline rp-checkbox" name="checkMethods">
+                                            <label class="regular-checkbox rp-choice-questions" for="checkMethods"><span>2.4.2  Methods development and validation studies: </span>The primary purpose of the research is to develop and/or validate new methods for analyzing or interpreting data (e.g., developing more powerful methods to detect epistatic, gene-environment, or other types of complex interactions in genome-wide association studies). Data will be used for developing and/or validating new methods.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="checkbox">
+                                            <input id="checkControls" type="checkbox" class="checkbox-inline rp-checkbox" name="checkControls">
+                                            <label class="regular-checkbox rp-choice-questions" for="checkControls"><span>2.4.3 Controls: </span>The reason for this request is to increase the number of controls available for a comparison group (e.g., a case-control study).</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="checkbox">
+                                            <input id="checkPopulation" type="checkbox" class="checkbox-inline rp-checkbox" name="checkPopulation">
+                                            <label class="regular-checkbox rp-choice-questions" for="checkPopulation"><span>2.4.4 Population structure or normal variation studies: </span>The primary purpose of the research is to learn more about a particular disease or disorder (e.g., type 2 diabetes), a trait (e.g., blood pressure), or a set of related conditions (e.g., autoimmune diseases, psychiatric disorders).</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="checkbox">
+                                            <input id="checkOther" type="checkbox" class="checkbox-inline rp-checkbox" name="checkOther" onclick="enableInputOtherFunction()">
+
+                                            <label class="regular-checkbox rp-choice-questions" for="checkOther"><span>2.4.5 Other:</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <input type="text" name="inputOther" id="inputOther" class="form-control" placeholder="Please specify if selected" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-title-question">2.5 Please state the disease area(s) this study focus on <span>Choose any number of Disease Ontology ; or None.</span></label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <input type="text" name="inputOntologies" id="inputOntologies" class="form-control" required="required" placeholder="Input all Disease Ontologies">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="tab3">
+                            <form class="form-horizontal" id="rpApplicationForm03">
+                                <h3 class="cm-subtitle request-color">3. Research Purpose Review</h3>
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-title-question">3.1 In order to ensure appropriate review, please answer the questions below:</label>
+                                        <label class="control-label rp-choice-questions">3.1.1 Will this data be used exclusively or in collaboration with, a for-profit entity?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" id="exclusiveYes" name="exclusive"><label for="exclusiveYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" id="exclusiveNo" name="exclusive"><label for="exclusiveNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.2 Please indicate if this study is limited to one gender?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="oneGender" id="oneGenderYes" onclick="votePositiveFunction()"><label for="oneGenderYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="oneGender" id="oneGenderNo" onclick="voteNegativeFunction()"><label for="oneGenderNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.3 Please indicate if this study is restricted to a pediatric population (under the age of 18)?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="pediatric" id="pediatricYes" onclick="votePositiveFunction()"><label for="pediatricYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="pediatric" id="pediatricNo" onclick="voteNegativeFunction()"><label for="pediatricNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.4 Does the research aim involve the study of illegal behaviors (violence, domestic abuse, prostitution, sexual victimization)?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="illegalBehave" id="illegalBehaveYes" onclick="enableInputIllegalFunction()"><label for="illegalBehaveYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="illegalBehave" id="illegalBehaveNo" onclick="voteNegativeFunction()"><label for="illegalBehaveNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <input type="text" name="inputIllegalBehave" id="inputIllegalBehave" class="form-control" placeholder="If yes, please specify" disabled>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.5 Does the research aim involve the study of alcohol or drug abuse, or abuse of other addictive products?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="addiction" id="addictionYes" onclick="votePositiveFunction()"><label for="addictionYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="addiction" id="addictionNo" onclick="voteNegativeFunction()"><label for="addictionNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.6 Does the research aim involve the study of sexual preferences or sexually transmitted diseases?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="sexualDiseases" id="sexualDiseasesYes" onclick="votePositiveFunction()"><label for="sexualDiseasesYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="sexualDiseases" id="sexualDiseasesNo" onclick="voteNegativeFunction()"><label for="sexualDiseasesNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.7 Does the research aim involve the study of any stigmatizing illnesses?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="stigmatizeDiseases" id="stigmatizeDiseasesYes" onclick="votePositiveFunction()"><label for="stigmatizeDiseasesYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="stigmatizeDiseases" id="stigmatizeDiseasesNo" onclick="voteNegativeFunction()"><label for="stigmatizeDiseasesNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.8 Does the study target a vulnerable population as defined in 456 CFR (children, prisoners, pregnant women, mentally disabled persons, or [SIGNIFICANTLY] economically or educationally disadvantaged persons)?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="vulnerablePop" id="vulnerablePopYes" onclick="votePositiveFunction()"><label for="vulnerablePopYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="vulnerablePop" id="vulnerablePopNo" onclick="voteNegativeFunction()"><label for="vulnerablePopNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.9 Does the research aim involve the study of Population Origins/Migration patterns?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="popMigration" id="popMigrationYes" onclick="votePositiveFunction()"><label for="popMigrationYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="popMigration" id="popMigrationNo" onclick="voteNegativeFunction()"><label for="popMigrationNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.10 Does the research aim involve the study of psychological traits, including intelligence, attention, emotion?</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="psychTraits" id="psychTraitsYes" onclick="votePositiveFunction()"><label for="psychTraitsYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="psychTraits" id="psychTraitsNo" onclick="voteNegativeFunction()"><label for="psychTraitsNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">3.1.11 Does the research correlate ethnicity, race, or gender with genotypic or other phenotypic variables, for purposes beyond biomedical or health-related research, or in ways that are not easily related to Health? </label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="notHealth" id="notHealthYes" onclick="votePositiveFunction()"><label for="notHealthYes"><div class ="radio-choices-text">Yes</div></label>
+                                        </div>
+                                        <div class="radio-inline radio-choices">
+                                            <input type="radio" class="regular-radio" name="notHealth" id="notHealthNo" onclick="voteNegativeFunction()"><label for="notHealthNo"><div class ="radio-choices-text">No</div></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="tab4">
+                            <form class="form-horizontal" id="rpApplicationForm04">
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <h3 class="cm-subtitle request-color">4. Attestation Statement</h3>
+                                        <label class="control-label rp-title-question">I attest to the following:</label>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rp-group">
+                                        <label class="control-label rp-choice-questions">1. Data will only be used for approved research.</label>
+                                        <label class="control-label rp-choice-questions">2. Data confidentiality will be protected and the investigator will never make any attempt at “re-identification”.</label>
+                                        <label class="control-label rp-choice-questions">3. All applicable laws, local institutional policies, and terms and procedures specific to the study’s data access policy will be followed.</label>
+                                        <label class="control-label rp-choice-questions">4. No attempts will be made to identify individual study participants from whom data were obtained.</label>
+                                        <label class="control-label rp-choice-questions">5. Data will not be sold or shared with third parties.</label>
+                                        <label class="control-label rp-choice-questions">6. The contributing investigator(s) who conducted the original study and the funding organizations involved in supporting the original study will be acknowledged in publications resulting from the analysis of those data.</label>
+                                    </div>
+                                    <div class="col-lg-3 col-lg-offset-9 col-md-3 col-sm-4 col-xs-12" style="margin-top: 5px;">
+                                        <button id="attestBtn" type="submit" class="btn btn-primary col-lg-12 col-md-12 col-sm-12 col-xs-12 vote-button request-background">Attest and Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <hr class="section-separator">
+                        <ul class="pager wizard">
+                            <div class="row multi-step-pager">
+                                <li class="previous multi-step-prev"><a href="#"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous Step</a></li>
+                                <li class="next multi-step-next"><a href="#">Next Step<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.bootstrap.wizard.js"></script>
+<script src="js/cm.js"></script>
+</body>
+</html>
+
+
+
