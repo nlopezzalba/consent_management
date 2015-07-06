@@ -27,6 +27,15 @@ small{
 .no-padding{
     padding: 0!important;
 }
+.f-left{
+    float: left;
+    text-align: left;
+}
+
+.f-right{
+    float: right;
+    text-align: right;
+}
 
 .bold{
     font-weight: bold !important;
@@ -34,6 +43,14 @@ small{
 
 .center-text{
     text-align: center;
+}
+
+.common-color{
+    color: #00609f !important;
+}
+
+.common-background{
+    background: #00609f !important;
 }
 
 .dul-color{
@@ -199,6 +216,9 @@ small{
         padding: 0 0 5px 0!important;
         margin: 10px 0 0 0;
     }
+        .cm-results-subtitle span{
+            color: #777777;
+        }
 
 
 /*********************************DUL & SSDUR BOXES*/
@@ -246,6 +266,10 @@ small{
     .pvotes-main-separator{
         border-width: 2px;
     }
+
+.separator-margin{
+    margin: 5px 15px 5px 15px !important;
+}
 
 /****************************************BOXES*/
 
@@ -630,6 +654,43 @@ a .urgent:hover, a .pending:hover, a .editable:hover, a .enabled:hover{
 
 /***************************RP APPLICATION*/
 
+.rp-group{
+    margin-bottom: 10px !important;
+}
+
+.rp-title-question, .rp-choice-questions{
+    float: left !important;
+    text-align: left !important;
+    display: block;
+    margin-bottom: 15px;
+}
+.rp-title-question{
+    font-size: 16px;
+    line-height: 23px;
+    font-weight: 500 !important;
+    color: #8E307A;
+}
+.rp-choice-questions{
+    font-weight: normal !important;
+    font-size: 15px;
+    color: #777777;
+}
+.rp-title-question span, .rp-choice-questions span{
+    font-weight: normal;
+    font-size: 15px;
+}
+.rp-choice-questions span{
+    display: inline;
+    color: #8E307A;
+}
+.rp-title-question span{
+    display: block;
+    color: #777777;
+}
+.rp-title-question span a, .rp-choice-questions span a{
+    color: #2FA4E7;
+}
+
 /*MULTISTEP*/
 
 
@@ -676,20 +737,23 @@ a .urgent:hover, a .pending:hover, a .editable:hover, a .enabled:hover{
 .multi-step-pager{
     margin: 0 5px 0 5px;
 }
-    .multi-step-pager li a{
+    .multi-step-pager li a, .download-button{
         border-radius: 5px !important;
-        /*background: #00609f !important;*/
-        background: #8E307A !important;
+        background: #8E307A;
         box-shadow: 3px 3px 0 #cccccc;
         color: #ffffff;
         border: none;
         height: 40px;
-        padding: 10px 15px 7px 15px !important;
+        padding: 10px 15px 8px 15px !important;
         width: auto;
         transition: background 0.3s ease;
     }
-        .multi-step-pager li a:hover{
+        .multi-step-pager li a:hover, .download-button:hover{
             background: #2FA4E7 !important;
+            color: #ffffff !important;
+        }
+
+        .download-button span, .download-button span:hover{
             color: #ffffff !important;
         }
 
@@ -701,63 +765,30 @@ a .urgent:hover, a .pending:hover, a .editable:hover, a .enabled:hover{
             background: #eeeeee !important;
             color: #cccccc !important;
             border: none !important;
-            padding: 10px 15px 7px 15px !important;
+            padding: 10px 15px 8px 15px !important;
         }
 
 .multi-step-prev, .multi-step-next{
     color: #777777;
     font-size: 15px;
 }
-    .multi-step-prev{
-        float: left;
-        text-align: left;
+    .multi-step-prev span{
+        padding: 2px 5px 0 0;
     }
-        .multi-step-prev span{
-            padding: 2px 5px 0 0;
-        }
-    .multi-step-next{
-        float: right;
-        text-align: right;
-    }
-        .multi-step-next span{
-            padding: 2px 0 0 5px;
-        }
 
-.rp-group{
-    margin-bottom: 10px !important;
+    .multi-step-next span{
+        padding: 2px 0 0 5px;
+    }
+
+.download-button{
+    float: right;
+    font-size: 15px;
+    margin: 35px 15px 0 0;
 }
 
-.rp-title-question, .rp-choice-questions{
-    float: left !important;
-    text-align: left !important;
-    display: block;
-    margin-bottom: 15px;
+/***************************SUMMARY STATISTICS*/
+
+
+.cm-icon-button{
+    padding: 2px 0 0 10px;
 }
-    .rp-title-question{
-        font-size: 16px;
-        line-height: 23px;
-        font-weight: 500 !important;
-        color: #8E307A;
-    }
-    .rp-choice-questions{
-        font-weight: normal !important;
-        font-size: 15px;
-        color: #777777;
-    }
-        .rp-title-question span, .rp-choice-questions span{
-            font-weight: normal;
-            font-size: 15px;
-        }
-        .rp-choice-questions span{
-            display: inline;
-            color: #8E307A;
-        }
-        .rp-title-question span{
-            display: block;
-            color: #777777;
-        }
-        .rp-title-question span a, .rp-choice-questions span a{
-            color: #2FA4E7;
-        }
-
-
