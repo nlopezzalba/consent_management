@@ -160,7 +160,7 @@ small{
         color: #777777;
         font-style: italic;
         font-size: 19px;
-        margin: 0 0 20px 55px;
+        margin: -5px 0 20px 55px !important;
         line-height: 25px;
     }
         .cm-title-description{
@@ -175,7 +175,7 @@ small{
     }
 
     .cm-subtitle{
-        padding: 15px 0 10px 0!important;
+        padding: 15px 0 0 0!important;
     }
 
         .cm-subtitle li h4{
@@ -189,14 +189,14 @@ small{
 
     .cm-user-name, .cm-box-title{
         font-size: 17px;
-        padding: 5px 0 5px 15px;
+        /*padding: 5px 0 5px 15px;*/
         display: inline;
     }
 
     .cm-inside-box-title{
         font-size: 17px;
         font-style: italic;
-        padding: 5px 0 5px 15px;
+        padding: 5px 0 5px 0;
         display: inline;
         color: #777777;
     }
@@ -205,12 +205,20 @@ small{
             font-style: italic;
         }
 
+    .cm-inside-box-title-margin{
+        margin-top: 45px;
+    }
+
     .cm-box-title{
         font-weight: normal !important;
     }
         .cm-box-title span{
             font-weight: 500 !important;
         }
+
+    .cm-results-title{
+
+    }
 
     .cm-results-subtitle{
         padding: 0 0 5px 0!important;
@@ -249,7 +257,7 @@ small{
 }
 
 .box-separator{
-    border-color: #BCBCBC;
+    border-color: #d5d5d5 !important;
     margin: 5px 0 5px 0;
 }
 
@@ -421,12 +429,12 @@ input[type=checkbox] {
         float: right !important;
     }
     .vote-reminder{
-        float: right;
+        /*float: right;*/
         height: 28px;
         line-height: 13px;
         margin-bottom: 4px;
-        background: rgba(204, 204, 204, 0.2)!important;
-        box-shadow: 2px 2px rgba(204, 204, 204, 0.5)!important;
+        background: rgba(204, 204, 204, 0.5)!important;
+        box-shadow: 2px 2px rgb(204, 204, 204)!important;
     }
         .vote-button:hover, .vote-reminder:hover{
             background: #2FA4E7 !important;
@@ -788,7 +796,12 @@ a .urgent:hover, a .pending:hover, a .editable:hover, a .enabled:hover{
 
 /***************************SUMMARY STATISTICS*/
 
-
 .cm-icon-button{
     padding: 2px 0 0 10px;
+}
+
+/***************************FINAL ACCESS VOTE*/
+
+.button-margin{
+    margin: -7px 15px 3px -15px;
 }

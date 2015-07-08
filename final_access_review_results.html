@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Collecting voting for Final Data Access Review</title>
+    <title>Final voting for Data Access review</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,14 +21,24 @@
 <body>
 <nav class="navbar top-navigator-bar">
     <div class="row top-navigator">
-        <div class="navbar navbar-left col-lg-6 col-md-6 col-sm-9 col-xs-12 no-padding no-margin">
+        <div class="navbar col-lg-6 col-md-6 col-sm-8 col-xs-12 no-padding no-margin">
             <ul class="navbar-left no-margin">
                 <li class="brand"><img src="images/broad_logo_allwhite.png" alt="Broad Institute Logo"></li>
-                <li><a href="my_console.html">My Console</a></li>
+                <li><a href="chairman_console.html">My Console</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </div>
-        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-3 col-xs-6 no-margin">
+        <div class="navbar col-lg-3 col-md-3 col-sm-4 col-xs-6 no-margin">
+            <form class="input-group box-search" id="adv-search" role="search">
+                <input type="text" class="form-control" placeholder="Enter search term..." />
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary btn-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-4 col-sm-offset-8 col-xs-6 no-margin">
             <li class="dropdown navbar-right user-li">
                 <a id="dacUser" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
                     DAC Chairperson <span class="caret"></span></br><small>dacchairperson@broadinstitute.org</small>
@@ -39,166 +49,45 @@
                 </ul>
             </li>
         </div>
-        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-4 col-offset-8 col-xs-6 no-margin">
-            <form class="input-group box-search" id="adv-search" role="search">
-                <input type="text" class="form-control" placeholder="Enter search term..." />
-                <div class="input-group-btn">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-primary btn-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                    </div>
-                </div>
-            </form>
-        </div>
     </div>
 </nav>
 <div class="container">
-    <h2 class="cm-title">
-        <img src="images/ico_access.png" alt="Access icon" class="cm-icons">Final voting for Data Access Review</br>
-        <div class="cm-title-description">Should the researcher be allowed to access this research study?</div>
+    <h2 class="cm-title access-color">
+        <img src="images/icon_access.png" alt="access icon" class="cm-icons">Final voting for Data Access review</br>
+        <div class="cm-title-description">Is the researcher going to be allowed to access this research study?</div>
     </h2>
     <hr class="section-separator">
-    <h3 id="datasetName" class="cm-subtitle">Name of the Dataset</h3>
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <div class="panel panel-primary cm-boxes">
-                <div class="panel-heading cm-boxhead-dul">
-                    <h4>Data Use Letter</h4>
-                </div>
-                <div id="dul" class="panel-body">To be used for research on the causes and development of cancer.</div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="panel panel-primary cm-boxes">
-                <div class="panel-heading cm-boxhead-ssdur">
-                    <h4>Research Purpose</h4>
-                </div>
-                <div id="prf" class="panel-body">I am studying breast cancer in a non-profit setting.</div>
-            </div>
-        </div>
-    </div>
-    <hr class="section-separator">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 fill">
-            <div class="jumbotron box-vote-singleresults">
-                <div class="row">
-                    <div class="userName col-lg-8 col-md-8 col-sm-12 col-xs-12 cm-inside-box-title">Were the <span>Data Use Letter</span> accurately converted into a machine-readable format?</div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="col-lg-11 col-lg-offset-1 col-md-12 col-sm-6 col-xs-6 no-padding">
-                            <input type="button" class="linkVotesBtn btn btn-primary vote-reminder" value="Review DAC Votes"/>
-                            <input type="button" class="linkVotesBtn btn btn-primary vote-reminder hidden" value="Collect DAC Votes"/>
-                        </div>
-                    </div>
-                </div>
-                <hr class="box-separator">
-                <div class="row">
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Vote: </label>
-                    <div class="singleVote col-lg-4 col-md-4 col-sm-9 col-xs-9 vote-label bold">Positive</div>
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Date: </label>
-                    <div class="voteDate col-lg-4 col-md-4 col-sm-9 col-xs-9 vote-label">00/00/0000</div>
-                </div>
-                <div class="row">
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Rationale: </label>
-                    <div class="inputRationale col-lg-10 col-md-10 col-sm-9 col-xs-9 vote-label"> ---</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="jumbotron box-vote-singleresults">
-                <div class="row">
-                    <div class="userName col-lg-8 col-md-8 col-sm-12 col-xs-12 cm-inside-box-title">Were the <span>Research Purpose</span> accurately converted into a machine-readable format?</div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="col-lg-11 col-lg-offset-1 col-md-12 col-sm-6 col-xs-6 no-padding">
-                            <input type="button" class="linkVotesBtn btn btn-primary vote-reminder hidden" value="Review DAC Votes"/>
-                            <input type="button" class="linkVotesBtn btn btn-primary vote-reminder" value="Collect DAC Votes"/>
-                        </div>
-                    </div>
-                </div>
-                <hr class="box-separator">
-                <div class="row">
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Vote: </label>
-                    <div class="singleVote col-lg-4 col-md-4 col-sm-9 col-xs-9 vote-label bold"> ---</div>
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Date: </label>
-                    <div class="voteDate col-lg-4 col-md-4 col-sm-9 col-xs-9 vote-label"> ---</div>
-                </div>
-                <div class="row">
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Rationale: </label>
-                    <div class="inputRationale col-lg-10 col-md-10 col-sm-9 col-xs-9 vote-label"> ---</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <hr class="section-separator">
-    <h3 class="cm-subtitle-ultimate">Data Access Review Results</br><small>Should the researcher have access to the dataset?</small></h3>
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="jumbotron box-vote-singleresults">
-                <div class="row">
-                    <div class="userName col-lg-8 col-md-8 col-sm-12 col-xs-12 cm-user-name">DAC Chairman</div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="col-lg-11 col-lg-offset-1 col-md-12 col-sm-6 col-xs-6 no-padding">
-                            <input type="button" class="linkVotesBtn btn btn-primary vote-reminder" value="Review DAC Votes"/>
-                            <input type="button" class="linkVotesBtn btn btn-primary vote-reminder hidden" value="Collect DAC Votes"/>
-                        </div>
-                    </div>
-                </div>
-                <hr class="box-separator">
-                <div class="row">
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Vote: </label>
-                    <div class="singleVote col-lg-4 col-md-4 col-sm-9 col-xs-9 vote-label bold">Positive</div>
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Date: </label>
-                    <div class="voteDate col-lg-4 col-md-4 col-sm-9 col-xs-9 vote-label">00/00/0000</div>
-                </div>
-                <div class="row">
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Rationale: </label>
-                    <div class="inputRationale col-lg-10 col-md-10 col-sm-9 col-xs-9 vote-label"> ---</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="jumbotron box-vote-singleresults">
-                <div class="row">
-                    <div class="userName col-lg-6 col-md-6 col-sm-12 col-xs-12 cm-user-name">Vault</div>
-                </div>
-                <hr class="box-separator">
-                <div class="row">
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label">Vote: </label>
-                    <div class="singleVote col-lg-10 col-md-10 col-sm-9 col-xs-9 vote-label bold">Positive</div>
-                </div>
-                <div class="row">
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label" style="visibility: hidden">Rationale: </label>
-                    <div class="inputRationale col-lg-10 col-md-10 col-sm-9 col-xs-9 vote-label"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
             <div class="jumbotron box-vote-results">
-                <h3 class="cm-results-subtitle">Ultimate decision</br></h3>
+                <h3 class="cm-results-subtitle access-color">
+                    Final Access decision</br>
+                    <small>Is the researcher going to be allowed to access this research study?</small>
+                </h3>
                 <hr class="box-separator-white">
                 <form class="form-horizontal" id="voteForm">
                     <div class="form-group first-form-group">
-                        <label class="col-lg-2 col-md-2 col-sm-2 col-xs-4 control-label vote-label">Vote</label>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8">
+                        <label class="col-lg-2 col-md-2 col-sm-2 col-xs-2 control-label vote-label">Vote</label>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                             <div class="button-holder">
                                 <div class="radio-inline group-regular-radio">
-                                    <input type="radio" class="regular-radio" name="inputVotePositive" id="inputVotePositive" onclick="votePositiveFunction()"><label for="inputVotePositive"><div class ="radio-button-text">Yes</div></label>
+                                    <input type="radio" class="regular-radio" name="inputFinalVote" id="inputVotePositive" onclick="votePositiveFunction()"><label for="inputVotePositive"><div class ="radio-button-text">Yes</div></label>
                                 </div>
                                 <div class="radio-inline">
-                                    <input type="radio" class="regular-radio" name="inputVoteNegative" id="inputVoteNegative" onclick="voteNegativeFunction()"><label for="inputVoteNegative"><div class ="radio-button-text">No</div></label>
+                                    <input type="radio" class="regular-radio" name="inputFinalVote" id="inputVoteNegative" onclick="voteNegativeFunction()"><label for="inputVoteNegative"><div class ="radio-button-text">No</div></label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-lg-2 col-md-2 col-sm-2 col-xs-4 control-label vote-label">Rationale</label>
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8">
-                            <input type="text" name="inputRationale" id="inputRationale" class="form-control col-lg-10 col-md-8 col-sm-6 col-xs-6 vote-input" placeholder="Describe your rationale here (be as specific as possible)." disabled>
+                        <label class="col-lg-2 col-md-2 col-sm-2 col-xs-2 control-label vote-label">Rationale</label>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                            <input type="text" name="inputRationale" id="inputRationale" class="form-control col-lg-10 col-md-8 col-sm-6 col-xs-6 vote-input" placeholder="Please explain why do you think this discrepancy occurred." disabled>
                         </div>
                     </div>
                     <div class="form-group form-group-bottom">
-                        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                             <div id="successMsg" class="alert alert-success validation-message hidden">
                                 <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
                                 Vote successfully logged.
@@ -208,20 +97,141 @@
                                 Please check your vote.
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                            <button id="voteBtn" type="submit" class="btn btn-primary col-lg-12 col-md-12 col-sm-12 col-xs-12 vote-button">Vote</button>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <button id="voteBtn" type="submit" class="col-lg-12 col-md-12 col-sm-12 col-xs-5 col-xs-offset-7 btn btn-primary vote-button access-background">Vote</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="jumbotron box-vote-results">
+                <h3 class="cm-results-subtitle access-color">
+                    Decision agreement</br>
+                    <small>Did the DAC agree with the Vault decision?</small>
+                </h3>
+                <hr class="box-separator-white">
+                <form class="form-horizontal" id="voteAgreementForm">
+                    <div class="form-group first-form-group">
+                        <label class="col-lg-2 col-md-2 col-sm-2 col-xs-2 control-label vote-label">Vote</label>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                            <div class="button-holder">
+                                <div class="radio-inline group-regular-radio">
+                                    <input type="radio" class="regular-radio" name="inputAgreement" id="voteAgreement" onclick="voteAgreementFunction()"><label for="voteAgreement"><div class ="radio-button-text">Yes</div></label>
+                                </div>
+                                <div class="radio-inline">
+                                    <input type="radio" class="regular-radio" name="inputAgreement" id="voteDisagreement" onclick="voteDisagreementFunction()"><label for="voteDisagreement"><div class ="radio-button-text">No</div></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 col-md-2 col-sm-2 col-xs-2 control-label vote-label">Rationale</label>
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                            <input type="text" name="inputRationale" id="inputDisagreeRationale" class="form-control col-lg-10 col-md-8 col-sm-6 col-xs-6 vote-input" placeholder="Please explain why do you think this discrepancy occurred." disabled>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-bottom">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                            <div id="agreeSuccessMsg" class="alert alert-success validation-message hidden">
+                                <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+                                Vote successfully logged.
+                            </div>
+                            <div id="agreeErrorMsg" class="alert alert-danger validation-message hidden">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                Please check your vote.
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <button id="voteAgreeBtn" type="submit" class="col-lg-12 col-md-12 col-sm-12 col-xs-5 col-xs-offset-7 btn btn-primary vote-button access-background">Vote</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <hr class="section-separator">
+    <h3 id="datasetName" class="cm-subtitle">Name of the Dataset</h3>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="panel panel-primary cm-boxes">
+                <div class="panel-heading cm-boxhead access-color">
+                    <h4>Data Use Letter</h4>
+                </div>
+                <div id="dul" class="panel-body cm-boxbody">To be used for research on the causes and development of cancer.</div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="panel panel-primary cm-boxes">
+                <div class="panel-heading cm-boxhead access-color">
+                    <h4>Research Purpose</h4>
+                </div>
+                <div id="prf" class="panel-body cm-boxbody">I am studying breast cancer in a non-profit setting.</div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-separator">
+
+    <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+            <h3 class="cm-subtitle">Voting Results</h3>
+            <div class="cm-inside-box-title">Should the researcher be allowed to access this research study?</div>
+            <div class="jumbotron box-vote-singleresults">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="cm-box-title access-color">Vault Decision</div>
+                        <hr class="box-separator">
+                        <div class="row">
+                            <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label vote-label access-color">Vote: </label>
+                            <div class="singleVote col-lg-8 col-md-8 col-sm-8 col-xs-8 vote-label bold">YES</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6 cm-box-title access-color">DAC Decision</div>
+                            <input type="button" class="btn btn-primary col-lg-4 col-md-4 col-sm-6 col-xs-6 vote-reminder access-color button-margin" value="Review DAC Votes"/>
+                            <input type="button" class="btn btn-primary col-lg-4 col-md-4 col-sm-6 col-xs-6 vote-reminder access-color button-margin hidden" value="Collect DAC Votes"/>
+                        </div>
+                        <hr class="box-separator">
+                        <div class="row">
+                            <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label vote-label access-color">Vote: </label>
+                            <div class="singleVote col-lg-3 col-md-3 col-sm-8 col-xs-8 vote-label bold">YES</div>
+                            <label class="col-lg-2 col-md-2 col-sm-4 col-xs-4 control-label vote-label access-color">Date: </label>
+                            <div class="voteDate col-lg-4 col-md-4 col-sm-8 col-xs-8 vote-label">00/00/0000</div>
+                            <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label vote-label access-color">Rationale: </label>
+                            <div class="inputRationale col-lg-9 col-md-9 col-sm-8 col-xs-8 vote-label"> ---</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 cm-inside-box-title-margin">
+            <div class="cm-inside-box-title">Was the Data Use Letter correctly converted into a machine-readable format?</div>
+            <div class="jumbotron box-vote-singleresults">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 cm-box-title access-color">DAC Decision</div>
+                    <input type="button" class="btn btn-primary col-lg-4 col-md-4 col-sm-4 col-xs-4 vote-reminder access-color button-margin" value="Review DAC Votes"/>
+                    <!--<input type="button" class="btn btn-primary col-lg-4 col-md-4 col-sm-6 col-xs-6 vote-reminder access-color button-margin hidden" value="Collect DAC Votes"/>-->
+                </div>
+                <hr class="box-separator">
+                <div class="row">
+                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label vote-label access-color">Vote: </label>
+                    <div class="singleVote col-lg-3 col-md-3 col-sm-3 col-xs-3 vote-label bold">YES</div>
+                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label access-color">Date: </label>
+                    <div class="voteDate col-lg-4 col-md-4 col-sm-3 col-xs-3 vote-label">00/00/0000</div>
+
+                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label vote-label access-color">Rationale: </label>
+                    <div class="inputRationale col-lg-9 col-md-9 col-sm-9 col-xs-9 vote-label"> ---</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- Google charts-->
-<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/access_chart.js"></script>
 <script src="js/cm.js"></script>
 
 </body>

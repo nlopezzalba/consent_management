@@ -6,11 +6,22 @@ $(function() {
         if (validateInput()) {
             $("#errorMsg").addClass("hidden");
             $("#successMsg").removeClass("hidden");
-            //$("#voteBtn").html("Edit");
-            // TODO : submit vote using AJAX
         } else {
             $("#errorMsg").removeClass("hidden");
             $("#successMsg").addClass("hidden");
+        }
+    });
+});
+
+$(function() {
+    $("#voteAgreementForm").submit(function(e) {
+        e.preventDefault();
+        if (validateAgreeInput()) {
+            $("#agreeErrorMsg").addClass("hidden");
+            $("#agreeSuccessMsg").removeClass("hidden");
+        } else {
+            $("#agreeErrorMsg").removeClass("hidden");
+            $("#agreeSuccessMsg").addClass("hidden");
         }
     });
 });
@@ -28,9 +39,27 @@ function voteNegativeFunction(){
     clearMessages();
 }
 
+function voteAgreementFunction(){
+    $('#inputDisagreement').removeAttr('checked');
+    $('#inputDisagreeRationale').val('');
+    $('#inputDisagreeRationale').prop("disabled", true);
+    clearMessages();
+}
+
+function voteDisagreementFunction(){
+    $('#inputAgreement').removeAttr('checked');
+    $('#inputDisagreeRationale').removeAttr('disabled').focus();
+    clearMessages();
+}
+
 function validateInput() {
     return $("#voteForm input:checked").length;
 }
+
+function validateAgreeInput() {
+    return $("#voteAgreementForm input:checked").length;
+}
+
 
 function clearMessages(){
     $("#errorMsg").addClass("hidden");
@@ -43,11 +72,6 @@ $(function sendAReminder() {
         $('.sendReminder').addClass("clickedBtn");
     });
 });
-
-function getAmountCases(){
-    $("#dulPendingCases").html("hidden");
-    $("#successMsg").addClass("hidden");
-}
 
 //RP APPLICATION
 
