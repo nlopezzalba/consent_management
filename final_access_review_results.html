@@ -173,65 +173,89 @@
 
     <hr class="section-separator">
 
-    <div class="row">
-        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-            <h3 class="cm-subtitle">Voting Results</h3>
-            <div class="cm-inside-box-title">Should the researcher be allowed to access this research study?</div>
-            <div class="jumbotron box-vote-singleresults">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="cm-box-title access-color">Vault Decision</div>
-                        <hr class="box-separator">
-                        <div class="row">
-                            <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label vote-label access-color">Vote: </label>
-                            <div class="singleVote col-lg-8 col-md-8 col-sm-8 col-xs-8 vote-label bold">YES</div>
+    <div class="row row-margin">
+        <h3 class="cm-subtitle access-color">Data Access Voting Results</h3>
+        <div class="cm-inside-box-title">Should the researcher be allowed to access this research study?</div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+                <div class="jumbotron box-vote-singleresults">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                            <div class="cm-box-title access-color">
+                                DAC Decision
+                                <input type="button" class="btn btn-primary f-right vote-reminder access-color button-margin" value="Review DAC Votes"/>
+                                <!--<input type="button" class="btn btn-primary vote-reminder access-color button-margin hidden" value="Collect DAC Votes"/>-->
+                            </div>
+                            <hr class="box-separator">
+                            <div class="row">
+                                <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label vote-label access-color">Vote: </label>
+                                <div class="singleVote col-lg-3 col-md-3 col-sm-8 col-xs-8 vote-label bold">YES</div>
+                                <label class="col-lg-2 col-md-2 col-sm-4 col-xs-4 control-label vote-label access-color">Date: </label>
+                                <div class="voteDate col-lg-4 col-md-4 col-sm-8 col-xs-8 vote-label">00/00/0000</div>
+                                <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label vote-label access-color">Rationale: </label>
+                                <div class="inputRationale col-lg-9 col-md-9 col-sm-8 col-xs-8 vote-label"> ---</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6 cm-box-title access-color">DAC Decision</div>
-                            <input type="button" class="btn btn-primary col-lg-4 col-md-4 col-sm-6 col-xs-6 vote-reminder access-color button-margin" value="Review DAC Votes"/>
-                            <input type="button" class="btn btn-primary col-lg-4 col-md-4 col-sm-6 col-xs-6 vote-reminder access-color button-margin hidden" value="Collect DAC Votes"/>
-                        </div>
-                        <hr class="box-separator">
-                        <div class="row">
-                            <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label vote-label access-color">Vote: </label>
-                            <div class="singleVote col-lg-3 col-md-3 col-sm-8 col-xs-8 vote-label bold">YES</div>
-                            <label class="col-lg-2 col-md-2 col-sm-4 col-xs-4 control-label vote-label access-color">Date: </label>
-                            <div class="voteDate col-lg-4 col-md-4 col-sm-8 col-xs-8 vote-label">00/00/0000</div>
-                            <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label vote-label access-color">Rationale: </label>
-                            <div class="inputRationale col-lg-9 col-md-9 col-sm-8 col-xs-8 vote-label"> ---</div>
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                            <div id="accessResultsChart" class="result_chart"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 cm-inside-box-title-margin">
-            <div class="cm-inside-box-title">Was the Data Use Letter correctly converted into a machine-readable format?</div>
-            <div class="jumbotron box-vote-singleresults">
-                <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 cm-box-title access-color">DAC Decision</div>
-                    <input type="button" class="btn btn-primary col-lg-4 col-md-4 col-sm-4 col-xs-4 vote-reminder access-color button-margin" value="Review DAC Votes"/>
-                    <!--<input type="button" class="btn btn-primary col-lg-4 col-md-4 col-sm-6 col-xs-6 vote-reminder access-color button-margin hidden" value="Collect DAC Votes"/>-->
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8">
+                <div class="jumbotron box-vote-singleresults vault-box-height">
+                    <div class="cm-box-title access-color">Vault Decision</div>
+                    <hr class="box-separator">
+                    <div class="row">
+                        <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label vote-label access-color">Vote: </label>
+                        <div class="singleVote col-lg-8 col-md-8 col-sm-8 col-xs-8 vote-label bold">YES</div>
+                        <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label vote-label access-color">Date: </label>
+                        <div class="voteDate col-lg-8 col-md-8 col-sm-8 col-xs-8 vote-label">00/00/0000</div>
+                    </div>
                 </div>
-                <hr class="box-separator">
-                <div class="row">
-                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label vote-label access-color">Vote: </label>
-                    <div class="singleVote col-lg-3 col-md-3 col-sm-3 col-xs-3 vote-label bold">YES</div>
-                    <label class="col-lg-2 col-md-2 col-sm-3 col-xs-3 control-label vote-label access-color">Date: </label>
-                    <div class="voteDate col-lg-4 col-md-4 col-sm-3 col-xs-3 vote-label">00/00/0000</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+                <h3 class="cm-subtitle dul-color">Data Use Letter Voting Results</h3>
+                <div class="cm-inside-box-title">Was the Data Use Letter correctly converted into a machine-readable format?</div>
 
-                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label vote-label access-color">Rationale: </label>
-                    <div class="inputRationale col-lg-9 col-md-9 col-sm-9 col-xs-9 vote-label"> ---</div>
+                <div class="jumbotron box-vote-singleresults">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                            <div class="cm-box-title dul-color">
+                                DAC Decision
+                                <input type="button" class="btn btn-primary f-right vote-reminder dul-color button-margin" value="Review DAC Votes"/>
+                                <!--<input type="button" class="btn btn-primary vote-reminder access-color button-margin hidden" value="Collect DAC Votes"/>-->
+                            </div>
+                            <hr class="box-separator">
+                            <div class="row">
+                                <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label vote-label dul-color">Vote: </label>
+                                <div class="singleVote col-lg-3 col-md-3 col-sm-8 col-xs-8 vote-label bold">YES</div>
+                                <label class="col-lg-2 col-md-2 col-sm-4 col-xs-4 control-label vote-label dul-color">Date: </label>
+                                <div class="voteDate col-lg-4 col-md-4 col-sm-8 col-xs-8 vote-label">00/00/0000</div>
+                                <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label vote-label dul-color">Rationale: </label>
+                                <div class="inputRationale col-lg-9 col-md-9 col-sm-8 col-xs-8 vote-label"> ---</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                            <div id="dulResultsChart" class="result_chart"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+
+<!-- Google charts-->
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
+<script src="js/access_chart.js"></script>
+<script src="js/dul_chart.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/access_chart.js"></script>
 <script src="js/cm.js"></script>
 
 </body>

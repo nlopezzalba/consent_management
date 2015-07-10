@@ -205,12 +205,9 @@ small{
             font-style: italic;
         }
 
-    .cm-inside-box-title-margin{
-        margin-top: 45px;
-    }
-
     .cm-box-title{
         font-weight: normal !important;
+        line-height: 30px !important;
     }
         .cm-box-title span{
             font-weight: 500 !important;
@@ -803,5 +800,14 @@ a .urgent:hover, a .pending:hover, a .editable:hover, a .enabled:hover{
 /***************************FINAL ACCESS VOTE*/
 
 .button-margin{
-    margin: -7px 15px 3px -15px;
+    margin: -3px 15px 3px -15px;
+    padding: 0 10px 0 10px;
+}
+
+.row-margin{
+    margin: 0 5px 0 5px;
+}
+
+.vault-box-height{
+    height: 168px;
 }
