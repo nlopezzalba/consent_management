@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>My Console</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cm_styles.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar top-navigator-bar top-navigator-bar-admin">
+    <div class="row top-navigator">
+        <div class="navbar col-lg-9 col-md-9 col-sm-8 col-xs-12 no-padding no-margin">
+            <ul class="navbar-left no-margin">
+                <li class="brand"><img src="images/broad_logo_allwhite.png" alt="Broad Institute Logo"></li>
+                <li><a href="admin_console.html">My Console</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        Data Use Letter<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu user-dropdown admin-dropdown" role="menu">
+                        <a href="#"><li>Manage Data Use Letters</li></a><hr>
+                        <a href="#"><li>Add Data Use Letter</li></a>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        User<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu user-dropdown" role="menu">
+                        <a href="#"><li>Manage Users</li></a><hr>
+                        <a href="#"><li>Add User</li></a>
+                    </ul>
+                </li>
+                <li><a href="#">Statistics</a></li>
+            </ul>
+        </div>
+        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xs-offset-6 no-margin">
+            <li class="dropdown navbar-right user-li">
+                <a id="dacUser" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                    Admin Username <span class="caret"></span></br><small id="dacUserMail">adminuser@broadinstitute.org</small>
+                </a>
+                <ul class="dropdown-menu user-dropdown f-right" role="menu">
+                    <a href="#"><li>Something</li></a>
+                    <hr>
+                    <a href="#"><li>Something else</li></a>
+                </ul>
+            </li>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+        <div class="row">
+            <h2 class="col-lg-9 col-md-9 col-sm-8 col-xs-8 cm-title dul-color">
+                <img src="images/icon_manage_dul.png" alt="Manage DUL icon" class="cm-icons">Manage Data Use Letter
+                <div class="cm-title-description" style="font-weight: normal; margin-bottom: 5px !important;">Some description of the features of this page</div>
+            </h2>
+            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-xs-4 admin-add-button dul-background">
+                <div class="all-icons add-dul_white"></div>
+                <span>Add Data Use Letter</span>
+            </a>
+        </div>
+        <div class="jumbotron box-vote-singleresults">
+            <div class="row">
+                <div class="pvotes-box-head">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pvotes-box-subtitle dul-color">Consent id</div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pvotes-box-subtitle dul-color">Consent name</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pvotes-box-subtitle f-center dul-color">Edit Record</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pvotes-box-subtitle f-center dul-color">Election status</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pvotes-box-subtitle f-center dul-color">Election actions</div>
+                    <hr class="pvotes-main-separator">
+                </div>
+                <div class="admin-box-body" id="manage_dul_list"></div>
+                <hr class="pvotes-separator">
+                <div class="pvotes-pagination">
+                    <ul class="pagination" id="manage_dul_paginator"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Google charts-->
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/cm_admin.js"></script>
+
+</body>
+
+<!-- Cancel Election Modal -->
+<div class="modal fade" id="cancel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog admin-modals" role="document">
+        <div class="modal-content">
+            <div class="modal-header admin-modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="pvotes-box-title cancel-color">Cancel election?
+                    <small>Are you sure you want to cancel this election process?</br> This case won't be available for DAC Review</small>
+                </h2>
+            </div>
+            <div class="modal-footer admin-modal-footer">
+                <button type="button" class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-2 btn" data-dismiss="modal">No</button>
+                <button type="button" class="col-lg-3 col-md-3 col-sm-4 col-xs-4 btn cancel-background" data-dismiss="modal">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Election Modal -->
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog admin-modals" role="document">
+        <div class="modal-content">
+            <div class="modal-header admin-modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="pvotes-box-title dul-color">Create election?
+                    <small>Are you sure you want the DAC to vote on this case?</small>
+                </h2>
+            </div>
+            <div class="modal-footer admin-modal-footer">
+                <button type="button" class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-2 btn" data-dismiss="modal">No</button>
+                <button type="button" class="col-lg-3 col-md-3 col-sm-4 col-xs-4 btn dul-background" data-dismiss="modal">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
+
+
+

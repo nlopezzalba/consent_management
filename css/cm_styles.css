@@ -18,6 +18,7 @@ a, input, button{
 small{
     font-weight: 400;
     font-style: italic;
+    font-style: italic;
 }
 
 .no-margin{
@@ -37,8 +38,12 @@ small{
     text-align: right;
 }
 
+.f-center{
+    text-align: center;
+}
+
 .bold{
-    font-weight: bold !important;
+    font-weight: 500 !important;
 }
 
 .center-text{
@@ -75,6 +80,18 @@ small{
 
 .request-background{
     background: #8E307A !important;
+}
+
+.cancel-color{
+    color: #D13B07 !important;
+}
+
+.cancel-background{
+    background: #D13B07 !important;
+}
+
+.hover-color{
+    color: #2FA4E7 !important;
 }
 /*********************************************NAV*/
 
@@ -119,17 +136,17 @@ small{
     float: right !important;
     text-align: right;
     margin: 0 40px 0 20px!important;
-
 }
+
     .user-dropdown a li{
-        float: right;
+        /*float: right;*/
         color: #00609f;
         padding: 10px 10px 5px 10px !important;
         font-weight: normal;
         font-size: 15px;
     }
     .user-dropdown hr{
-        float: right;
+        /*float: right;*/
         margin: 2px !important;
     }
 
@@ -494,15 +511,20 @@ input[type=checkbox] {
     margin: 0 0 0 5px;
 }
 
-.pvotes-box-head, .pvotes-box-body{
+.pvotes-box-head, .pvotes-box-body, .admin-box-body{
     padding: 0 10px 0 10px;
     margin: 0;
 }
-    .pvotes-box-body{
-        max-height: 190px;
+    .pvotes-box-body, .admin-box-body{
         overflow-y: hidden;
         overflow-x: hidden;
         color: #777777;
+    }
+    .pvotes-box-body{
+        max-height: 190px;
+    }
+    .admin-box-body{
+        max-height: 380px;
     }
 
 .pvotes-box-title{
@@ -557,9 +579,8 @@ input[type=checkbox] {
         width: auto;
     }
 
-.urgent, .pending, .editable, .enabled, .disabled{
+.urgent, .pending, .editable, .enabled, .disabled, .create, .cancel{
     text-align: center;
-    /*background: transparent;*/
     height: 28px;
     line-height: 13px;
     padding: 8px 0 0 0px !important;
@@ -570,16 +591,16 @@ input[type=checkbox] {
     border-radius: 5px;
     -moz-border-radius: 5px;
 }
-    a .urgent, a .pending, a .editable, a .enabled{
+    a .urgent, a .pending, a .editable, a .enabled, a .create, a .cancel{
         transition: background 0.3s ease !important;
         background: rgba(204, 204, 204, 0.2)!important;
         box-shadow: 2px 2px rgba(204, 204, 204, 0.5)!important;
     }
-        a .urgent{
+        a .urgent, a .cancel{
             color: #D13B07 !important;
         }
         a .pending, a .enabled{
-            color: #D13B07 !important;
+            color: #D13B07;
         }
         a .editable{
             color: #777777 !important;
@@ -742,7 +763,7 @@ a .urgent:hover, a .pending:hover, a .editable:hover, a .enabled:hover{
 .multi-step-pager{
     margin: 0 5px 0 5px;
 }
-    .multi-step-pager li a, .download-button{
+    .multi-step-pager li a, .download-button, .admin-add-button, .admin-modal-button{
         border-radius: 5px !important;
         background: #8E307A;
         box-shadow: 3px 3px 0 #cccccc;
@@ -753,13 +774,19 @@ a .urgent:hover, a .pending:hover, a .editable:hover, a .enabled:hover{
         width: auto;
         transition: background 0.3s ease;
     }
-        .multi-step-pager li a:hover, .download-button:hover{
+        .multi-step-pager li a:hover, .download-button:hover, .admin-add-button:hover{
             background: #2FA4E7 !important;
             color: #ffffff !important;
         }
 
         .download-button span, .download-button span:hover{
             color: #ffffff !important;
+        }
+
+        .admin-add-button span{
+            color: #ffffff;
+            font-size: 15px;
+            vertical-align: 55%;
         }
 
     .multi-step-pager .disabled{
@@ -785,7 +812,7 @@ a .urgent:hover, a .pending:hover, a .editable:hover, a .enabled:hover{
         padding: 2px 0 0 5px;
     }
 
-.download-button{
+.download-button, .admin-add-button{
     float: right;
     font-size: 15px;
     margin: 35px 15px 0 0;
@@ -811,3 +838,167 @@ a .urgent:hover, a .pending:hover, a .editable:hover, a .enabled:hover{
 .vault-box-height{
     height: 168px;
 }
+
+/************************************ADMIN*/
+
+.top-navigator-bar-admin {
+    background: #444444 !important;
+    color: #fff;
+}
+
+.admin-dropdown{
+    min-width: 220px !important;
+}
+
+.admin-icon-titles, .admin-icon-subtitles{
+    color: #777777;
+    font-weight: 500;
+}
+
+.admin-icon-titles{
+    font-size: 22px !important;
+    display: inline;
+    margin: 20px 0 10px 0 !important;
+}
+
+.admin-icon-subtitles{
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: 40%;
+    /*transition: color 0.3s ease;*/
+}
+.admin-icons:hover .admin-icon-subtitles {
+    color: #2FA4E7!important;
+}
+
+.admin-icons {
+    display: block;
+}
+.all-icons {
+    display: inline-block;
+    width: 30px;
+    height: 35px;
+    background: url('../images/admin_icons_.png') no-repeat 0 0;
+    overflow: hidden;
+    text-indent: -15000px;
+    margin: 7px 3px 0 0;
+}
+
+.manage-dul {
+    background-position: 0 0;
+}
+.admin-icons:hover .manage-dul{
+    background-position: 0 -35px !important;
+}
+.add-dul {
+    background-position: -30px 0;
+}
+.admin-icons:hover .add-dul {
+    background-position: -30px -35px !important;
+}
+.manage-user {
+    background-position: -60px 0;
+}
+.admin-icons:hover .manage-user {
+    background-position: -60px -35px !important;
+}
+.add-user{
+    background-position: -90px 0;
+}
+.admin-icons:hover .add-user {
+    background-position: -90px -35px !important;
+}
+.add-dul_white {
+    background-position: -120px 0;
+    margin: -7px 0 0 0;
+}
+.admin-manage-buttons .enabled, .admin-manage-buttons .disabled, .admin-manage-buttons .create, .admin-manage-buttons .cancel {
+    width: 70px !important;
+    text-align: center;
+    margin: 4px auto 0 auto !important;
+}
+.admin-manage-buttons .create{
+    color: #ffffff !important;
+    background: rgba(193, 107, 12, 1)!important;
+}
+
+.admin-manage-buttons .enabled:hover, .admin-manage-buttons .create:hover{
+    background: #2FA4E7 !important;
+    color: #ffffff;
+}
+.admin-manage-buttons .cancel:hover{
+    background: #D13B07 !important;
+    color: #ffffff !important;
+}
+.admin-modals{
+    width: 500px !important;
+    margin-top: 250px !important;
+}
+.admin-modal-header, .admin-modal-footer{
+    border: none !important;
+}
+.admin-modal-header h2{
+    padding: 0 10px 0 10px !important;
+}
+.admin-modal-header h2 small{
+    display: block;
+    padding-top: 7px;
+    font-size: 16px;
+    line-height: 22px;
+}
+.admin-modal-footer{
+    margin-bottom: 10px;
+    padding-top: 5px !important;
+}
+.admin-modal-footer button{
+    border: 0!important;
+    transition: background 0.3s ease;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    height: 35px;
+    line-height: 13px;
+    box-shadow: 2px 2px rgb(204, 204, 204)!important;
+}
+.admin-modal-footer button:first-child{
+    background: #eeeeee;
+    color: #777777;
+}
+.admin-modal-footer button:hover{
+    background: #2FA4E7 !important;
+    color: #ffffff !important;
+}
+
+
+/*****WEBKIT MASK-IMAGE TOO BAD IT ONLY WORKS ON CHROME AND SAFARI*****/
+
+/*.admin-icons .admin-ico{*/
+    /*background-color: #777777;*/
+    /*height: 35px;*/
+    /*width: 30px;*/
+    /*transition: background-color 0.3s ease;*/
+    /*display: inline-block;*/
+    /*margin: 0 3px 0 3px !important;*/
+    /*vertical-align: -30%;*/
+/*}*/
+
+/*.admin-icons:hover .admin-ico{*/
+    /*background-color: #2FA4E7;*/
+/*}*/
+/*.adduser_icon .admin-ico {*/
+    /*-webkit-mask-image: url('../images/icon_adduser.png');*/
+    /*background-color: #00609F;*/
+/*}*/
+/*.manageuser_icon .admin-ico {*/
+    /*-webkit-mask-image: url('../images/icon_manageuser.png');*/
+    /*background-color: #00609F;*/
+/*}*/
+
+/*.adddul_icon .admin-ico {*/
+    /*-webkit-mask-image: url('../images/icon_adddul.png');*/
+    /*background-color: #C16B0C;*/
+/*}*/
+/*.managedul_icon .admin-ico {*/
+    /*-webkit-mask-image: url('../images/icon_managedul.png');*/
+    /*background-color: #C16B0C;*/
+/*}*/
