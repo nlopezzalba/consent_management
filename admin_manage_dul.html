@@ -20,58 +20,59 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar top-navigator-bar top-navigator-bar-admin">
-    <div class="row top-navigator">
-        <div class="navbar col-lg-9 col-md-9 col-sm-8 col-xs-12 no-padding no-margin">
-            <ul class="navbar-left no-margin">
-                <li class="brand"><img src="images/broad_logo_allwhite.png" alt="Broad Institute Logo"></li>
-                <li><a href="admin_console.html">My Console</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                        Data Use Letter<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu user-dropdown admin-dropdown" role="menu">
-                        <a href="#"><li>Manage Data Use Letters</li></a><hr>
-                        <a href="#"><li>Add Data Use Letter</li></a>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                        User<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu user-dropdown" role="menu">
-                        <a href="#"><li>Manage Users</li></a><hr>
-                        <a href="#"><li>Add User</li></a>
-                    </ul>
-                </li>
-                <li><a href="#">Statistics</a></li>
-            </ul>
-        </div>
-        <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xs-offset-6 no-margin">
-            <li class="dropdown navbar-right user-li">
-                <a id="dacUser" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                    Admin Username <span class="caret"></span></br><small id="dacUserMail">adminuser@broadinstitute.org</small>
-                </a>
-                <ul class="dropdown-menu user-dropdown f-right" role="menu">
-                    <a href="#"><li>Something</li></a>
-                    <hr>
-                    <a href="#"><li>Something else</li></a>
+    <nav class="navbar top-navigator-bar top-navigator-bar-admin">
+        <div class="row top-navigator">
+            <div class="navbar col-lg-9 col-md-9 col-sm-8 col-xs-12 no-padding no-margin">
+                <ul class="navbar-left no-margin">
+                    <li class="brand"><img src="images/broad_logo_allwhite.png" alt="Broad Institute Logo"></li>
+                    <li><a href="admin_console.html">My Console</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                            Data Use Letter<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu user-dropdown admin-dropdown" role="menu">
+                            <a href="#"><li>Manage Data Use Letters</li></a><hr>
+                            <a href="#"><li>Add Data Use Letter</li></a>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                            User<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu user-dropdown" role="menu">
+                            <a href="#"><li>Manage Users</li></a><hr>
+                            <a href="#"><li>Add User</li></a>
+                        </ul>
+                    </li>
+                    <li><a href="#">Statistics</a></li>
                 </ul>
-            </li>
+            </div>
+            <div class="navbar navbar-right col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xs-offset-6 no-margin">
+                <li class="dropdown navbar-right user-li">
+                    <a id="dacUser" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                        Admin Username <span class="caret"></span></br><small id="dacUserMail">adminuser@broadinstitute.org</small>
+                    </a>
+                    <ul class="dropdown-menu user-dropdown f-right" role="menu">
+                        <a href="#"><li>Something</li></a>
+                        <hr>
+                        <a href="#"><li>Something else</li></a>
+                    </ul>
+                </li>
+            </div>
         </div>
-    </div>
-</nav>
-<div class="container">
-    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-        <div class="row">
-            <h2 class="col-lg-9 col-md-9 col-sm-8 col-xs-8 cm-title dul-color">
+    </nav>
+    <div class="container">
+        <div class="row no-margin">
+            <h2 class="col-lg-9 col-md-9 col-sm-8 col-xs-8 cm-title dul-color no-padding">
                 <img src="images/icon_manage_dul.png" alt="Manage DUL icon" class="cm-icons">Manage Data Use Letter
-                <div class="cm-title-description" style="font-weight: normal; margin-bottom: 5px !important;">Some description of the features of this page</div>
+                <div class="cm-title-admin-description">Select and manage Data Use Letters for DAC review</div>
             </h2>
-            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-xs-4 admin-add-button dul-background">
-                <div class="all-icons add-dul_white"></div>
-                <span>Add Data Use Letter</span>
-            </a>
+            <div>
+                <a class="col-lg-3 col-md-3 col-sm-4 col-xs-4 admin-add-button dul-background" data-toggle="modal" data-target="#addDul">
+                    <div class="all-icons add-dul_white"></div>
+                    <span>Add Data Use Letter</span>
+                </a>
+            </div>
         </div>
         <div class="jumbotron box-vote-singleresults">
             <div class="row">
@@ -91,6 +92,166 @@
             </div>
         </div>
     </div>
+
+    <!-- Cancel Election Modal -->
+    <div class="modal fade" id="cancel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-alerts" role="document">
+            <div class="modal-content">
+                <div class="modal-header admin-modal-header">
+                    <button type="button" class="modal-close-btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="pvotes-box-title cancel-color">Cancel election?
+                        <small>Are you sure you want to cancel this election process? This case won't be available for DAC Review.</small>
+                    </h2>
+                </div>
+                <div class="modal-footer admin-modal-footer">
+                    <button type="button" class="btn dismiss-background" data-dismiss="modal">No</button>
+                    <button type="button" class="btn cancel-background" data-dismiss="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Election Modal -->
+    <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog admin-modals modal-alerts" role="document">
+            <div class="modal-content">
+                <div class="modal-header admin-modal-header">
+                    <button type="button" class="modal-close-btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="pvotes-box-title dul-color">Create election?
+                        <small>Are you sure you want the DAC to vote on this case?</small>
+                    </h2>
+                </div>
+                <div class="modal-footer admin-modal-footer">
+                    <button type="button" class="btn dismiss-background" data-dismiss="modal">No</button>
+                    <button type="button" class="btn dul-background" data-dismiss="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add DUL Modal -->
+    <div class="modal fade" id="addDul" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-add-dul">
+            <div class="modal-content">
+                <div class="modal-header admin-modal-header">
+                    <button type="button" class="modal-close-btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="cm-title-admin dul-color">
+                        <img src="images/icon_add_dul.png" alt="Add DUL icon" class="cm-icons">
+                        <span>Add Data Use Letter</span>
+                        <div class="cm-title-description">Catalog a Data Use Limitation Record in the system</div>
+                    </h2>
+                </div>
+                <div class="modal-footer">
+                    <form class="form-horizontal" id="voteForm">
+                        <fieldset>
+                            <div class="form-group admin-form-group first-form-group">
+                                <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label dul-color">Consent Id</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 admin-input">
+                                    <input type="text"
+                                           name="inputConsentId"
+                                           class="form-control col-lg-12 vote-input"
+                                           placeholder="Consent Id">
+                                </div>
+                            </div>
+                            <div class="form-group admin-form-group ">
+                                <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label dul-color">Name</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 admin-input">
+                                    <input type="text"
+                                           name="inputName"
+                                           class="form-control col-lg-12 vote-input"
+                                           placeholder="Name for the Data Use Letter">
+                                </div>
+                            </div>
+                            <div class="form-group admin-form-group ">
+                                <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label dul-color">Data Use Letter File</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 bold">
+                                    <div class="fileUpload col-lg-3 col-md-3 col-sm-4 col-xs-12 upload-button">
+                                        <span>Upload file</span>
+                                        <span class="cm-icon-button glyphicon glyphicon-upload caret-margin" aria-hidden="true"></span>
+                                        <input type="file" class="upload" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group admin-form-group ">
+                                <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label dul-color">Structured string</label>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 admin-input">
+                                    <input type="text"
+                                           name="inputSDUL"
+                                           class="form-control col-lg-12 vote-input"
+                                           placeholder="Structured string of the Data Use Letter">
+                                </div>
+                            </div>
+                            <div class="admin-modal-footer">
+                                <button type="button" class="col-lg-3 col-md-3 col-sm-4 col-xs-6 btn dul-background" data-dismiss="modal">Add</button>
+                                <button type="button" class="col-lg-3 col-md-3 col-sm-4 col-xs-6 btn dismiss-background" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Edit DUL Modal -->
+        <div class="modal fade" id="editDul" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-add-dul">
+                <div class="modal-content">
+                    <div class="modal-header admin-modal-header">
+                        <button type="button" class="modal-close-btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h2 class="cm-title-admin dul-color">
+                            <img src="images/icon_add_dul.png" alt="Add DUL icon" class="cm-icons">
+                            <span>Add Data Use Letter</span>
+                            <div class="cm-title-description">Edit a Data Use Limitation Record in the system</div>
+                        </h2>
+                    </div>
+                    <div class="modal-footer">
+                        <form class="form-horizontal" id="voteForm">
+                            <fieldset>
+                                <div class="form-group admin-form-group first-form-group">
+                                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label dul-color">Consent Id</label>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 admin-input">
+                                        <input type="text"
+                                               name="inputConsentId"
+                                               class="form-control col-lg-12 vote-input"
+                                               placeholder="Consent Id">
+                                    </div>
+                                </div>
+                                <div class="form-group admin-form-group ">
+                                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label dul-color">Name</label>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 admin-input">
+                                        <input type="text"
+                                               name="inputName"
+                                               class="form-control col-lg-12 vote-input"
+                                               placeholder="Name for the Data Use Letter">
+                                    </div>
+                                </div>
+                                <div class="form-group admin-form-group ">
+                                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label dul-color">Data Use Letter File</label>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 bold">
+                                        <div class="fileUpload col-lg-3 col-md-3 col-sm-4 col-xs-12 upload-button">
+                                            <span>Upload file</span>
+                                            <span class="cm-icon-button glyphicon glyphicon-upload caret-margin" aria-hidden="true"></span>
+                                            <input type="file" class="upload" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group admin-form-group ">
+                                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label dul-color">Structured string</label>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 admin-input">
+                                        <input type="text"
+                                               name="inputSDUL"
+                                               class="form-control col-lg-12 vote-input"
+                                               placeholder="Structured string of the Data Use Letter">
+                                    </div>
+                                </div>
+                                <div class="admin-modal-footer">
+                                    <button type="button" class="col-lg-3 col-md-3 col-sm-4 col-xs-6 btn dul-background" data-dismiss="modal">Edit</button>
+                                    <button type="button" class="col-lg-3 col-md-3 col-sm-4 col-xs-6 btn dismiss-background" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- UNTIL HERE-->
 </div>
 
 <!-- Google charts-->
@@ -102,42 +263,6 @@
 <script src="js/cm_admin.js"></script>
 
 </body>
-
-<!-- Cancel Election Modal -->
-<div class="modal fade" id="cancel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog admin-modals" role="document">
-        <div class="modal-content">
-            <div class="modal-header admin-modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h2 class="pvotes-box-title cancel-color">Cancel election?
-                    <small>Are you sure you want to cancel this election process?</br> This case won't be available for DAC Review</small>
-                </h2>
-            </div>
-            <div class="modal-footer admin-modal-footer">
-                <button type="button" class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-2 btn" data-dismiss="modal">No</button>
-                <button type="button" class="col-lg-3 col-md-3 col-sm-4 col-xs-4 btn cancel-background" data-dismiss="modal">Yes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Create Election Modal -->
-<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog admin-modals" role="document">
-        <div class="modal-content">
-            <div class="modal-header admin-modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h2 class="pvotes-box-title dul-color">Create election?
-                    <small>Are you sure you want the DAC to vote on this case?</small>
-                </h2>
-            </div>
-            <div class="modal-footer admin-modal-footer">
-                <button type="button" class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-2 btn" data-dismiss="modal">No</button>
-                <button type="button" class="col-lg-3 col-md-3 col-sm-4 col-xs-4 btn dul-background" data-dismiss="modal">Yes</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 </html>
 

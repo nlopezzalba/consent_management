@@ -21,9 +21,8 @@ listItemsTemplate += '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pvotes-lis
 listItemsTemplate += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pvotes-list-id"><%= election.consentName %></div>';
 
 listItemsTemplate += '<a href="#" class="admin-manage-buttons col-lg-2 col-md-2 col-sm-2 col-xs-2">';
-listItemsTemplate += '<div class="dul-color <%= election.editRecord %>">';
-listItemsTemplate += '<% if(election.editRecord == "enabled"){ %>Edit<% } %>';
-listItemsTemplate += '<% if(election.editRecord == "disabled"){ %>Edit<% } %>';
+listItemsTemplate += '<div class="<%= election.editRecord %> hover-color">';
+listItemsTemplate += 'Edit';
 listItemsTemplate += '</div>';
 listItemsTemplate += '</a>';
 
@@ -31,10 +30,11 @@ listItemsTemplate += '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pvotes-lis
 listItemsTemplate += '<% if(election.electionStatus == "unreviewed"){ %>Un-reviewed<% } %>';
 listItemsTemplate += '<% if(election.electionStatus == "opened"){ %>Open<% } %>';
 listItemsTemplate += '<% if(election.electionStatus == "canceled"){ %>Canceled<% } %>';
-listItemsTemplate += '<% if(election.electionStatus == "closed"){ %>Closed<% } %>';
+listItemsTemplate += '<% if(election.electionStatus == "reviewed"){ %>Reviewed<% } %>';
 listItemsTemplate += '</div>';
 
 listItemsTemplate += '<a href="#" class="admin-manage-buttons col-lg-2 col-md-2 col-sm-2 col-xs-2">';
+
 listItemsTemplate += '<div class="<%= election.electionActions %>" data-toggle="modal" data-target="#<%= election.electionActions %>">';
 listItemsTemplate += '<% if(election.electionActions == "create"){ %>Create<% } %>';
 listItemsTemplate += '<% if(election.electionActions == "cancel"){ %>Cancel<% } %>';
@@ -109,5 +109,13 @@ $('#cancel').on('shown.bs.modal', function () {
 })
 
 $('#create').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+})
+
+$('#addDul').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+})
+
+$('#editDul').on('shown.bs.modal', function () {
     $('#myInput').focus()
 })
